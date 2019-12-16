@@ -29,16 +29,16 @@ int main(){
 	balls=ra+1;
 	spe=balls+6;
 	
-	cout<<"lotto!"<<endl<<"choose 1~49, and don't the same."<<endl;
+	cout<<"lotto!"<<endl<<"Choose 1~49, and don't choose the same."<<endl;
 	j=0;
 	while(*(input+5)==0){
 		a=0;
 		b=0;
 		c=0;
-		cout<<"the "<<j+1<<" ball from you.";
+		cout<<"the "<<j+1<<" number from you.";
 		cin>>key;
 		if(key<1 or key>49) cout<<"Please between 1~49"<<endl;
-		else if (key==*input or key==*(input+1) or key==*(input+2) or key==*(input+3) or key==*(input+4) or key==*(input+5))	cout<<"you key the same num!"<<endl;
+		else if (key==*input or key==*(input+1) or key==*(input+2) or key==*(input+3) or key==*(input+4) or key==*(input+5))	cout<<"You key the same number!"<<endl;
 		else{
 			*(input+j)=key;
 			j++;
@@ -55,7 +55,7 @@ int main(){
 	}
 	cout<<endl<<endl;
 	
-	cout<<"your number";
+	cout<<"Your numbers";
 	for(i=0;i<6;i++) cout<<setw(4)<<*(input+i);
 	
 	for(i=0;i<6;i++){
@@ -67,9 +67,9 @@ int main(){
 			}
 		}
 	}
-	cout<<endl<<"balls ";
+	cout<<endl<<"winning numbers ";
 	for(i=0;i<6;i++) cout<<setw(4)<<*(balls+i);
-	cout<<"special "<<*spe<<endl;
+	cout<<"special number "<<*spe<<endl;
 	a=0;
 	b=0;
 	c=0;
@@ -82,7 +82,7 @@ int main(){
 		if(*(input+i)==*(spe)) b++;
 	}
 	
-	if(a==6)	cout<<"1st!";
+	if(a==6)	cout<<"You hit the jackpot!!!";
 	else if(a==5 and b==1)	cout<<"2nd!";
 	else if(a==5)	cout<<"3rd!";
 	else if(a==4 and b==1)	cout<<"4th!";
@@ -96,5 +96,5 @@ int main(){
 	}while(c==1);
 /*	reward=lotto(input,balls);*/
 //	system("pause");
-	return 1;
+//	return 1;
 }
