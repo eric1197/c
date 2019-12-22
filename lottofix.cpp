@@ -1,8 +1,8 @@
-#include <iostream>
-#include <iomanip>
-#include <ctime>
-#include <cstdlib>
-using namespace std;
+#include <iostream>  //宣告標頭檔 <iostream> 
+#include <iomanip>  //宣告標頭檔 <iomanip>
+#include <ctime>  //宣告標頭檔 <ctime>
+#include <cstdlib>  //宣告標頭檔 <cstdlib>
+using namespace std;  //宣告名稱空間 std 
 
 int keyagain(int key,int *input){  //資料驗證函式_是否重複輸入(驗證項數上限 6項 ) 
 	for (int i=0;i<6;i++)	if (key==*(input+i)) return 1;  //重複執行 若有重複數字則回傳 1 
