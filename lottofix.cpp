@@ -32,6 +32,7 @@ void lotto_check(int *input,int *balls,int spe,int &a,int &b){  //樂透對獎函式
 
 int main(){  //主程式 
 	int ra[50],*random=ra,*balls=random+1,*spe=balls+6,i,j,temp,key,in[6]={0,0,0,0,0,0},*input=in,a=0,b=0,c=0;  //宣告變數、陣列、指標 
+	system("color 0F"); //為方便使用者閱讀 將命令列介面色彩設定為 黑底白字 
 	cout<<"大樂透模擬遊戲"<<endl<<"請依序輸入六個號碼，必須是1~49的數字，且不可重複。"<<endl;  //輸出說明文字 
 	j=0;  //將j用於數字計數 初始化為0 
 	while(*(input+5)==0){  //在第6個數字被輸入完畢前重複執行 
