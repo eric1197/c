@@ -30,7 +30,7 @@ void lotto_check(int *input,int *balls,int spe,int &a,int &b){  //樂透對獎函式
 	else cout<<"你沒中獎！";  //輸出沒中獎情形 
 }
 
-main(){  //主程式 
+int main(){  //主程式 
 	int ra[50],*random=ra,*balls=random+1,*spe=balls+6,i,j,temp,key,in[6]={0,0,0,0,0,0},*input=in,a=0,b=0,c=0;  //宣告變數、陣列、指標 
 	cout<<"大樂透模擬遊戲"<<endl<<"請依序輸入六個號碼，必須是1~49的數字，且不可重複。"<<endl;  //輸出說明文字 
 	j=0;  //將j用於數字計數 初始化為0 
@@ -46,7 +46,7 @@ main(){  //主程式
 	}
 	for(i=1;i<50;i++)	*(random+i)=i; //亂數陣列初始化為1~49 (開獎用) 
 	do{  //重複執行開獎程序 
-	srand((unsigned int)time(NULL));
+	srand((unsigned int)time(NULL));  //初始化隨機亂數種子 
 	for(i=1;i<50;i++){  //洗牌演算法 
 			int ram=rand()%49+1;  //取一隨機亂數ram介於1~49 
 			temp=*(random+ram);  //將 亂數陣列第ram項 存至 暫存變數 (交換步驟1) 
@@ -56,8 +56,8 @@ main(){  //主程式
 	cout<<endl<<"本期你選的數字為：";  //輸出自選獎號說明文字
 	for(i=0;i<6;i++) cout<<setw(4)<<*(input+i);  //輸出自選獎號 
 	for(i=0;i<6;i++){  //氣泡排序法 
-		for(j=0;j<5;j++){
-			if(*(balls+j)>*(balls+j+1)){
+		for(j=0;j<5;j++){  //重複執行與他人比較 
+			if(*(balls+j)>*(balls+j+1)){  //如果balls第j項比j+1項大 執行交換 
 				temp=*(balls+j);  //將 開出獎號第j項 存入 暫存變數  (交換步驟1) 
 				*(balls+j)=*(balls+j+1);  //將 開出獎號第j項 存入 開出獎號第j+1項  (交換步驟2) 
 				*(balls+j+1)=temp;  //將 暫存變數 存回 亂數陣列第i+1項 (交換完成) 
