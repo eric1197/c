@@ -12,12 +12,13 @@ int count_0(int *be){
 	if(*(be+count)==0){
 		count++;
 		count_0(be);
+//		cout<<endl<<be<<"+"<<count<<" = "<<*(be+count)<<endl;
 	}
 //	}
 }
 
 void app9(){
-	int i,j,before[40],*be=before,ra[40],random,temp,a,b,c,d,e,r,k=0,p=0,space=0,total=0;
+	int i,j,before[40],*be=before,ra[40],random,temp,a,b,c,d,e,r,k=0,p=0,space=0,total=0,total_again=0;
 	count=0;
 //	char space[40];
 	srand((unsigned int)time(NULL));
@@ -42,7 +43,9 @@ void app9(){
 	
 	for(i=0;i<5;i++){
 //	cout<<count_0(be)<<endl;
-	space=count_0(be+count);
+	space=count_0(be+count); //+total_again
+	cout<<endl<<"space = "<<space<<endl;
+	total_again=space+1;
 	while(space!=0){
 		r=space%2;
 		space=space/2;
@@ -52,7 +55,7 @@ void app9(){
 	total=total+p;
 //	cout<<p;
 	cout<<"_";
-	count=0;
+	count++;
 	}
 	cout<<endl;
 	system("Pause");
