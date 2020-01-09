@@ -19,7 +19,7 @@ int main()
     //appchoice=-1;
     system("cls");
     cout<<"請選擇程式"<<endl;
-    cout<<"[app(1~3)、(0)Exit]:";
+    cout<<"[app(1~5)、(6)P243、(7)P245、(8)P248、(9)P256-9、(0)Exit]:";
     cin>>appchoice;
     cout<<"------------------------------------------------"<<endl;
     if(appchoice==1)
